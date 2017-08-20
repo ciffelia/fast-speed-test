@@ -1,0 +1,12 @@
+{
+  "name": "fast-speed-test",
+  "version": "1.0.0",
+  "description": "Fast.com Internet Speed Test",
+  "main": "index.js",
+  "repository": "https://github.com/prince0203/fast-speed-test.git",
+  "author": "prince0203 <mc.prince.0203@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^0.9.0"
+  }
+}
