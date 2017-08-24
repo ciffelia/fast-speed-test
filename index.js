@@ -10,6 +10,7 @@ const puppeteer = require('puppeteer');
 
   const browser = await puppeteer.launch({
     executablePath,
+    dumpio: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
