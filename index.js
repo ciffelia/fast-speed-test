@@ -10,7 +10,7 @@ const puppeteer = require('puppeteer');
 
   const browser = await puppeteer.launch({
     executablePath,
-    args: ['--no-sandbox']
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
   console.log('Chrome launched');
