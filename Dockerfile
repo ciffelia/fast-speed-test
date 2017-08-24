@@ -28,4 +28,4 @@ RUN cd /root && \
 
 WORKDIR /root/fast-speed-test
 
-ENTRYPOINT ["node", "index.js", "--chrome-executable", "`which chromium-browser`"]
+ENTRYPOINT ["node", "index.js", "--chrome-executable", "/usr/bin/chromium-browser"]
