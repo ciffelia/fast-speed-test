@@ -14,6 +14,12 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Install git
+RUN apt-get update -y && \
+    apt-get install --no-install-recommends -y git && \
+    apt-get clean -y && \
+    rm -rf /var/lib/apt/lists/*
+
 RUN cd /root && \
     git clone https://github.com/prince0203/fast-speed-test.git && \
     cd fast-speed-test && \
