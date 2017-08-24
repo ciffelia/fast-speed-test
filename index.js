@@ -1,8 +1,12 @@
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 
+const useDockerChromium = process.argv.slice(2).includes('--docker-chromium');
+
 (async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    executablePath: useDockerChromium ? './docker-chromium.sh' : undefined
+  });
 
   console.log('Chrome launched');
   
