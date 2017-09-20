@@ -2,7 +2,13 @@ const fs = require('fs');
 const puppeteer = require('puppeteer');
 
 (async () => {
-  const browser = await puppeteer.launch();
+  const args = process.argv.slice(2);
+  const executablePath =
+    args.includes('--chrome-executable')
+    ? args[args.indexOf('--chrome-executable') + 1]
+    : undefined;
+  
+  const browser = await puppeteer.launch({executablePath});
 
   console.log('Chrome launched');
   
