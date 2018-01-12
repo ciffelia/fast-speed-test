@@ -7,6 +7,6 @@
   "author": "prince0203 <mc.prince.0203@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "puppeteer": "^0.10.2"
+    "puppeteer": "^1.0.0"
   }
 }
