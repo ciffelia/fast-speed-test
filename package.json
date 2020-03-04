@@ -2,14 +2,17 @@
   "name": "fast-speed-test",
   "version": "1.0.0",
   "description": "Fast.com Internet Speed Test",
-  "main": "index.js",
-  "repository": "https://github.com/prince0203/fast-speed-test.git",
-  "author": "prince0203 <mc.prince.0203@gmail.com>",
+  "author": "Ciffelia <mc.prince.0203@gmail.com> (https://ciffelia.com/)",
+  "repository": "github:ciffelia/fast-speed-test",
+  "homepage": "https://github.com/ciffelia/fast-speed-test#readme",
+  "bugs": "https://github.com/ciffelia/fast-speed-test/issues",
   "license": "MIT",
   "scripts": {
+    "start": "node index.js",
     "lint": "standard",
     "fix": "standard --fix"
   },
+  "main": "index.js",
   "dependencies": {
     "puppeteer": "^2.1.1"
   },
