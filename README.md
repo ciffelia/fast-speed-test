@@ -1,13 +1,12 @@
 # fast-speed-test
-
-[![Build Status](https://travis-ci.org/prince0203/fast-speed-test.svg?branch=master)](https://travis-ci.org/prince0203/fast-speed-test)
-[![Greenkeeper badge](https://badges.greenkeeper.io/prince0203/fast-speed-test.svg)](https://greenkeeper.io/)
+[![CI Status](https://github.com/ciffelia/fast-speed-test/workflows/CI/badge.svg?branch=master)](https://github.com/ciffelia/fast-speed-test/actions?query=workflow%3ACI+branch%3Amaster)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=ciffelia/fast-speed-test)](https://dependabot.com)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)  
 Fast.com Internet Speed Test
 
 ## Usage
 
-```bash
-$ yarn
-$ node index.js
+```sh
+$ yarn install
+$ yarn start
 ```
