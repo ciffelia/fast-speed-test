@@ -1,7 +1,8 @@
-const fs = require('fs')
-const puppeteer = require('puppeteer');
+process.on('unhandledRejection', err => { throw err })
 
-(async () => {
+const puppeteer = require('puppeteer')
+
+;(async () => {
   const args = process.argv.slice(2)
   const executablePath =
     args.includes('--chrome-executable')
@@ -19,24 +20,17 @@ const puppeteer = require('puppeteer');
 
   await page.waitFor('#speed-value.succeeded')
 
-  const currentTime = Math.floor(new Date().getTime() / 1000)
-
   const speedValue = await page.evaluate(() => {
     const speedValueElem = document.getElementById('speed-value')
-    return Promise.resolve(speedValueElem.innerText)
+    return speedValueElem.innerText
   })
 
   const speedUnits = await page.evaluate(() => {
     const speedUnitsElem = document.getElementById('speed-units')
-    return Promise.resolve(speedUnitsElem.innerText)
+    return speedUnitsElem.innerText
   })
 
-  console.log(speedValue + speedUnits)
-
-  fs.appendFileSync('result.csv', currentTime + ',' + speedValue + ',' + speedUnits + '\n')
+  console.log(`Result: ${speedValue}${speedUnits}`)
 
   browser.close()
-})().catch(err => {
-  console.error(err)
-  process.exit(1)
-})
+})()
