@@ -25,7 +25,7 @@ const waitForResult = require('./waitForResult')
 
   await Promise.all([
     (async () => {
-      const showMoreDetailsButton = await page.waitFor('#show-more-details-link', { visible: true })
+      const showMoreDetailsButton = await page.waitForSelector('#show-more-details-link', { visible: true })
       await showMoreDetailsButton.click()
     })(),
     (async () => {
