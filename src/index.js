@@ -1,25 +1,17 @@
-process.on('unhandledRejection', err => { throw err })
-
 const puppeteer = require('puppeteer')
 const waitForResult = require('./waitForResult')
 
 ;(async () => {
-  const args = process.argv.slice(2)
-  const executablePath =
-    args.includes('--chrome-executable')
-      ? args[args.indexOf('--chrome-executable') + 1]
-      : undefined
-
   console.log('Launching Chrome...')
 
-  const browser = await puppeteer.launch({ executablePath })
+  const browser = await puppeteer.launch()
 
   console.log('Loading Fast.com...')
 
   const page = await browser.newPage()
   await page.goto('https://fast.com/')
 
-  console.log('Testing...')
+  console.log('Running tests...')
 
   page.setDefaultTimeout(90 * 1000)
 
@@ -45,8 +37,6 @@ const waitForResult = require('./waitForResult')
       console.log(`Loaded latency: ${loadedLatency}`)
     })()
   ])
-
-  console.log('Closing Chrome...')
 
   browser.close()
 })()
