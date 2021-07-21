@@ -5,7 +5,7 @@ const setupPage = async () => {
   const context = await browser.newContext()
   const page = await context.newPage()
 
-  await page.addInitScript(storage => {
+  await page.addInitScript(() => {
     if (window.location.hostname === 'fast.com') {
       window.localStorage.setItem('showAdvanced', 'true')
     }
