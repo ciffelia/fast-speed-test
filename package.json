@@ -13,7 +13,7 @@
     "fix": "standard --fix"
   },
   "dependencies": {
-    "playwright": "^1.12.3"
+    "playwright": "1.12.3"
   },
   "devDependencies": {
     "standard": "^16.0.3"

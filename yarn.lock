@@ -1271,7 +1271,7 @@ pkg-dir@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-playwright@^1.12.3:
+playwright@1.12.3:
   version "1.12.3"
   resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.12.3.tgz#113afa2cba10fb56e9a5b307377343e32a155a99"
   integrity sha512-eyhHvZV7dMAUltqjQsgJ9CjZM8dznzN1+rcfCI6W6lfQ7IlPvTFGLuKOCcI4ETbjfbxqaS5FKIkb1WDDzq2Nww==

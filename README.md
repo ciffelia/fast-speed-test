@@ -11,3 +11,9 @@ Unofficial CLI client for Fast.com Internet Speed Test
 yarn
 yarn start
 ```
+
+### Docker
+
+```bash
+docker run --rm ghcr.io/ciffelia/fast-speed-test
+```
