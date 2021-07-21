@@ -8,13 +8,12 @@
   "bugs": "https://github.com/ciffelia/fast-speed-test/issues",
   "license": "MIT",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node src/main.js",
     "lint": "standard",
     "fix": "standard --fix"
   },
-  "main": "index.js",
   "dependencies": {
-    "puppeteer": "^8.0.0"
+    "playwright": "^1.12.3"
   },
   "devDependencies": {
     "standard": "^16.0.3"
