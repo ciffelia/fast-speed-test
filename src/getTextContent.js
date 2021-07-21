@@ -1,5 +1,6 @@
 const getTextContent = async (page, selector) => {
-  return page.$eval(selector, elm => elm.textContent)
+  const elmHandle = await page.$(selector)
+  return elmHandle?.evaluate(elm => elm.textContent)
 }
 
 module.exports = getTextContent

@@ -4,7 +4,7 @@ const waitForTestComplete = async page => {
     '#upload-units.succeeded', '#upload-value.succeeded',
     '#latency-units.succeeded', '#latency-value.succeeded',
     '#bufferbloat-units.succeeded', '#bufferbloat-value.succeeded',
-    '#user-location', '#user-ip', '#user-isp',
+    '#user-location', '#user-ip',
     '#server-locations'
   ]
 

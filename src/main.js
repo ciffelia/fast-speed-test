@@ -13,7 +13,7 @@ const main = async () => {
   const result = await extractTestResult(page)
   console.log(`Download speed: ${result.speed.download}, Upload speed: ${result.speed.upload}`)
   console.log(`Unloaded latency: ${result.latency.unloaded}, Loaded latency: ${result.latency.loaded}`)
-  console.log(`Client: ${result.client.location} | ${result.client.ip} | ${result.client.isp}`)
+  console.log(`Client: ${result.client.location} | ${result.client.ip} | ${result.client.isp ?? 'Unknown ISP'}`)
   console.log(`Server: ${result.server.locations.join(' | ')}`)
 
   await browser.close()
