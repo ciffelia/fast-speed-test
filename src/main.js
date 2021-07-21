@@ -10,11 +10,11 @@ const main = async () => {
   await page.goto('https://fast.com/')
   await waitForTestComplete(page)
 
-  const result = await extractTestResult(page)
-  console.log(`Download speed: ${result.speed.download}, Upload speed: ${result.speed.upload}`)
-  console.log(`Unloaded latency: ${result.latency.unloaded}, Loaded latency: ${result.latency.loaded}`)
-  console.log(`Client: ${result.client.location} | ${result.client.ip} | ${result.client.isp ?? 'Unknown ISP'}`)
-  console.log(`Server: ${result.server.locations.join(' | ')}`)
+  const { speed, latency, client, server } = await extractTestResult(page)
+  console.log(`Download speed: ${speed.download}, Upload speed: ${speed.upload}`)
+  console.log(`Unloaded latency: ${latency.unloaded}, Loaded latency: ${latency.loaded}`)
+  console.log(`Client: ${client.location} | ${client.ip} | ${client.isp ?? 'Unknown ISP'}`)
+  console.log(`Server: ${server.locations.join(' | ')}`)
 
   await browser.close()
 }
