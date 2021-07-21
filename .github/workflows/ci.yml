@@ -16,6 +16,7 @@ jobs:
         with:
           node-version: 14
           check-latest: true
+          cache: yarn
       - run: yarn install --frozen-lockfile
       - run: yarn run lint
 
@@ -32,5 +33,6 @@ jobs:
         with:
           node-version: 14
           check-latest: true
+          cache: yarn
       - run: yarn install --frozen-lockfile
       - run: yarn start
