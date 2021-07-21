@@ -11,7 +11,7 @@ const setupPage = async () => {
     }
   })
 
-  page.setDefaultTimeout(90 * 1000)
+  page.setDefaultTimeout(45 * 1000)
 
   return { browser, context, page }
 }
