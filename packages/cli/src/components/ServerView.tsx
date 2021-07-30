@@ -11,11 +11,6 @@ interface Props {
 const ServerView: React.FC<Props> = ({ value }) => {
   return (
     <Box>
-      {/* Array.from(value.locations.entries()).map(([i, location]) => (
-        <Block title={`Server #${i}`} width={20} key={i}>
-          <LocationView value={location} />
-        </Block>
-      )) */}
       {value == null ? (
         <PlaceholderText />
       ) : (
