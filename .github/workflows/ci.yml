@@ -52,7 +52,8 @@ jobs:
           cache: yarn
       - run: yarn install --immutable
       - run: yarn run build
-      - run: yarn start --browser ${{ matrix.browser }}
+      # Retry once
+      - run: yarn start --browser ${{ matrix.browser }} || yarn start --browser ${{ matrix.browser }}
 
   build-and-push-docker:
     needs: [build, lint, run]
