@@ -76,7 +76,7 @@ jobs:
           load: true
 
       - name: Run
-        run: docker run --rm ghcr.io/ciffelia/fast-speed-test:latest
+        run: docker run --rm ghcr.io/ciffelia/fast-speed-test:latest --output static
 
       - name: Login to GitHub Container Registry
         if: github.ref == 'refs/heads/master'
