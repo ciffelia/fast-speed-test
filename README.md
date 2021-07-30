@@ -38,6 +38,8 @@ docker run -it --rm --ipc=host --security-opt=seccomp=seccomp_profile.json ghcr.
 ```bash
 -b, --browser  [choices: "chromium", "firefox", "webkit"] [default: "firefox"]
 -s, --skipAdvanced  Skip advanced metrics           [boolean] [default: false]
+-o, --output        Output format
+                       [choices: "static", "realtime"] [default: "realtime"]
 -h, --help          Show help                                        [boolean]
 ```
 
