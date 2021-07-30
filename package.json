@@ -7,15 +7,31 @@
   "homepage": "https://github.com/ciffelia/fast-speed-test#readme",
   "bugs": "https://github.com/ciffelia/fast-speed-test/issues",
   "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "start": "node src/main.js",
-    "lint": "standard",
-    "fix": "standard --fix"
+    "build": "yarn workspaces foreach --verbose --parallel --topological-dev run build",
+    "start": "yarn workspace @fast-speed-test/cli start",
+    "lint": "yarn run lint:eslint && yarn run lint:prettier",
+    "lint:eslint": "eslint --ext .js,.ts,.jsx,.tsx .",
+    "lint:prettier": "prettier --check .",
+    "fix": "yarn run fix:eslint && yarn run fix:prettier",
+    "fix:eslint": "eslint --fix --ext .js,.ts,.jsx,.tsx .",
+    "fix:prettier": "prettier --write .",
+    "g:tsc": "cd $INIT_CWD && tsc"
   },
   "dependencies": {
-    "playwright": "1.12.3"
+    "typescript": "~4.3.5"
   },
   "devDependencies": {
-    "standard": "^16.0.3"
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "eslint": "^7.31.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard-with-typescript": "^20.0.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "prettier": "^2.3.2"
   }
 }

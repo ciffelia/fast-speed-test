@@ -1,0 +1,16 @@
+{
+  "name": "@fast-speed-test/core",
+  "private": true,
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "scripts": {
+    "dev": "yarn g:tsc --watch",
+    "build": "yarn g:tsc"
+  },
+  "dependencies": {
+    "playwright": "1.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.17.6"
+  }
+}
