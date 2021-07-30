@@ -11,7 +11,7 @@ const parseArgs = (): Option => {
     .options({
       browser: {
         choices: ['chromium', 'firefox', 'webkit'],
-        default: 'chromium',
+        default: 'firefox',
         alias: 'b'
       },
       skipAdvanced: {
