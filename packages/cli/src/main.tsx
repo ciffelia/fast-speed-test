@@ -16,7 +16,13 @@ const main = async (): Promise<void> => {
   })
   test.start()
 
-  render(<App fastSpeedTest={test} showDebugRaw={option.debug} />)
+  render(
+    <App
+      fastSpeedTest={test}
+      showRaw={option.debug}
+      outputFormat={option.output}
+    />
+  )
 }
 
 // eslint-disable-next-line @typescript-eslint/no-floating-promises

@@ -20,6 +20,12 @@ const parseArgs = (): Option => {
         default: false,
         alias: 's'
       },
+      output: {
+        choices: ['static', 'realtime'],
+        description: 'Output format',
+        default: 'realtime',
+        alias: 'o'
+      },
       debug: {
         type: 'boolean',
         hidden: true,

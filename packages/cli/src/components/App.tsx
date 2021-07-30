@@ -1,49 +1,36 @@
 import React from 'react'
-import { Box, Text } from 'ink'
 import { FastSpeedTest } from '@fast-speed-test/core'
 import { Loading } from './Loading'
-import { Section } from './Section'
-import { PhaseSummary } from './PhaseSummary'
-import { MetricSummary } from './MetricSummary'
-import { ClientView } from './ClientView'
-import { ServerView } from './ServerView'
 import { useProgress } from '../hooks/useProgress'
 import { useExitOnComplete } from '../hooks/useExitOnComplete'
+import { OutputFormat } from '../Option'
+import { ProgressView } from './ProgressView'
 
 interface Props {
   fastSpeedTest: FastSpeedTest
-  showDebugRaw?: boolean
+  outputFormat: OutputFormat
+  showRaw: boolean
 }
 
-const App: React.FC<Props> = ({ fastSpeedTest, showDebugRaw }) => {
+const App: React.FC<Props> = ({ fastSpeedTest, outputFormat, showRaw }) => {
   const progress = useProgress(fastSpeedTest)
   useExitOnComplete(progress)
 
-  if (progress == null) {
-    return (
-      <Box marginLeft={2}>
-        <Loading />
-      </Box>
-    )
+  if (outputFormat === 'realtime') {
+    if (progress == null) {
+      return <Loading />
+    } else {
+      return <ProgressView progress={progress} showRaw={showRaw} />
+    }
+  } else if (outputFormat === 'static') {
+    if (progress == null || !progress.completed) {
+      return null
+    } else {
+      return <ProgressView progress={progress} showRaw={showRaw} />
+    }
   }
 
-  return (
-    <Box flexDirection="column">
-      <PhaseSummary value={progress.phase} />
-      <MetricSummary progress={progress} />
-      <Section title="Client">
-        <ClientView value={progress.client} />
-      </Section>
-      <Section title="Server">
-        <ServerView value={progress.server} />
-      </Section>
-      {showDebugRaw === true ? (
-        <Section title="Raw">
-          <Text>{JSON.stringify(progress)}</Text>
-        </Section>
-      ) : null}
-    </Box>
-  )
+  return null
 }
 
 export { App }
