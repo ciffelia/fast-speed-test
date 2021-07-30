@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Text } from 'ink'
-import Spinner from 'ink-spinner'
 import { FastSpeedTest } from '@fast-speed-test/core'
+import { Loading } from './Loading'
 import { Section } from './Section'
 import { PhaseSummary } from './PhaseSummary'
 import { MetricSummary } from './MetricSummary'
@@ -22,12 +22,7 @@ const App: React.FC<Props> = ({ fastSpeedTest, showDebugRaw }) => {
   if (progress == null) {
     return (
       <Box marginLeft={2}>
-        <Text color="blue">
-          <Spinner />
-        </Text>
-        <Box marginLeft={1}>
-          <Text>Loading</Text>
-        </Box>
+        <Loading />
       </Box>
     )
   }
