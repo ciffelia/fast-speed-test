@@ -1,13 +1,16 @@
-FROM mcr.microsoft.com/playwright:v1.12.3-focal
+FROM mcr.microsoft.com/playwright:v1.13.1-focal
+
+# Switch to non-root user
+RUN useradd --create-home --user-group fast
+USER fast
 
 ENV NODE_ENV production
-WORKDIR /root/fast-speed-test
+WORKDIR /home/fast/app
 
-COPY ./package.json ./yarn.lock ./
+COPY --chown=fast:fast . .
 
-RUN yarn install --frozen-lockfile --production && \
-    yarn cache clean
+RUN yarn install --immutable && \
+    yarn build && \
+    yarn cache clean --mirror
 
-COPY . .
-
-ENTRYPOINT ["node", "src/main.js"]
+ENTRYPOINT ["yarn", "start"]
