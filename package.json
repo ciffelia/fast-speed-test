@@ -19,6 +19,7 @@
     "fix": "yarn run fix:eslint && yarn run fix:prettier",
     "fix:eslint": "eslint --fix --ext .js,.ts,.jsx,.tsx .",
     "fix:prettier": "prettier --write .",
+    "playwright": "yarn workspace @fast-speed-test/core run playwright",
     "g:tsc": "cd $INIT_CWD && tsc"
   },
   "dependencies": {
