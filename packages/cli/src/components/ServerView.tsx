@@ -10,7 +10,7 @@ interface Props {
 
 const ServerView: React.FC<Props> = ({ value }) => {
   return (
-    <Box>
+    <Box minWidth={6} justifyContent="center">
       {value == null ? (
         <PlaceholderText />
       ) : (
