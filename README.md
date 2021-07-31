@@ -5,6 +5,8 @@
 
 Unofficial CLI client for [Fast.com](https://fast.com/) Internet Speed Test
 
+https://user-images.githubusercontent.com/15273128/127733953-79ef615c-984f-4e92-ab49-2626688cf9b7.mp4
+
 ## Usage
 
 This app runs speed test on headless Firefox by default. You can switch to Chromium or WebKit.
