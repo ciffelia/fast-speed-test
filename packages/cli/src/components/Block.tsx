@@ -3,12 +3,12 @@ import { Box, Text } from 'ink'
 
 interface Props {
   title: string
-  width?: number
+  minWidth?: number
 }
 
-const Block: React.FC<Props> = ({ title, width, children }) => {
+const Block: React.FC<Props> = ({ title, minWidth, children }) => {
   return (
-    <Box flexDirection="column" alignItems="center" width={width}>
+    <Box flexDirection="column" alignItems="center" minWidth={minWidth}>
       <Text color="cyan" underline>
         {title}
       </Text>

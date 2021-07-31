@@ -13,19 +13,19 @@ const MetricSummary: React.FC<Props> = ({ progress }) => {
   return (
     <Box flexDirection="column">
       <Section title="Speed">
-        <Block title="Download" width={10}>
+        <Block title="Download" minWidth={10}>
           <MetricView value={progress.downloadSpeed} />
         </Block>
-        <Block title="Upload" width={10}>
+        <Block title="Upload" minWidth={10}>
           <MetricView value={progress.uploadSpeed} />
         </Block>
       </Section>
 
       <Section title="Latency">
-        <Block title="Unloaded" width={10}>
+        <Block title="Unloaded" minWidth={10}>
           <MetricView value={progress.unloadedLatency} />
         </Block>
-        <Block title="Loaded" width={10}>
+        <Block title="Loaded" minWidth={10}>
           <MetricView value={progress.loadedLatency} />
         </Block>
       </Section>

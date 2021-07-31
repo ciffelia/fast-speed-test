@@ -13,13 +13,13 @@ interface Props {
 const ClientView: React.FC<Props> = ({ value }) => {
   return (
     <Box>
-      <Block title="IP Address" width={14}>
+      <Block title="IP Address" minWidth={12}>
         <OptionalText>{value?.ip}</OptionalText>
       </Block>
-      <Block title="ISP" width={15}>
+      <Block title="ISP" minWidth={11}>
         <OptionalText>{value?.isp}</OptionalText>
       </Block>
-      <Block title="Location" width={10}>
+      <Block title="Location" minWidth={11}>
         {value?.location == null ? (
           <PlaceholderText />
         ) : (
