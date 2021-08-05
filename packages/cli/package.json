@@ -2,8 +2,9 @@
   "name": "@fast-speed-test/cli",
   "private": true,
   "scripts": {
+    "dev": "yarn g:tsc --watch",
     "build": "yarn g:tsc",
-    "start": "NODE_NO_WARNINGS=1 ts-node --transpile-only src/main.tsx"
+    "start": "node --no-warnings --enable-source-maps dist/main.js"
   },
   "dependencies": {
     "@fast-speed-test/core": "workspace:*",
@@ -11,7 +12,6 @@
     "ink-spinner": "^4.0.2",
     "react": "^17.0.2",
     "react-use": "^17.2.4",
-    "ts-node": "^10.1.0",
     "yargs": "^17.0.1"
   },
   "devDependencies": {

@@ -4,7 +4,10 @@
     "module": "CommonJS",
     "lib": ["ES2020"],
     "jsx": "react",
-    "noEmit": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "./dist",
 
     "strict": true,
 
@@ -13,9 +16,6 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "include": ["./src/**/*"],
 
-  "ts-node": {
-    "files": true
-  }
+  "include": ["./src/**/*"]
 }
